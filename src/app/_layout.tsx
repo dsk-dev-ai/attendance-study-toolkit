@@ -9,9 +9,13 @@ import { Screen } from '@/components/ui/screen';
 import { Colors } from '@/constants/theme';
 
 export function ErrorBoundary({ error, retry }: ErrorBoundaryProps) {
+  if (__DEV__) {
+    console.error(error);
+  }
+
   return (
     <Screen centered>
-      <ErrorState message={error.message} onRetry={retry} />
+      <ErrorState message={__DEV__ ? error.message : undefined} onRetry={retry} />
     </Screen>
   );
 }

@@ -17,7 +17,7 @@ export function AppHeader() {
         accessibilityLabel="Open settings"
         hitSlop={Spacing.two}
         onPress={() => router.push('/settings')}
-        style={({ pressed }) => pressed && styles.pressed}>
+        style={({ pressed }) => (pressed ? styles.pressed : undefined)}>
         <Icon
           name={{ ios: 'gearshape.fill', android: 'settings', web: 'settings' }}
           size={24}

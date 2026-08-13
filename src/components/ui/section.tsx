@@ -19,7 +19,10 @@ export function Section({ title, action, children }: SectionProps) {
           {title.toUpperCase()}
         </ThemedText>
         {action && (
-          <Pressable onPress={action.onPress} hitSlop={Spacing.two}>
+          <Pressable
+            accessibilityRole="button"
+            onPress={action.onPress}
+            hitSlop={Spacing.two}>
             <ThemedText type="small" style={{ color: theme.primary }}>
               {action.label}
             </ThemedText>
